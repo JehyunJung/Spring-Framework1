@@ -21,11 +21,23 @@ public class MemberService
     /**
      * 회원가입
      */
-    public Long join(Member member){
-        validateDuplicateMember(member);
-        memberRepository.save(member);
-        return member.getId();
+    public Long join(Member member) {
+        /*long start = System.currentTimeMillis();
+        try {
+            validateDuplicateMember(member);
+            memberRepository.save(member);
+            return member.getId();
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timePassed=finish-start;
+            System.out.println("join: "+timePassed+"ms");
+
+        }*/
+            validateDuplicateMember(member);
+            memberRepository.save(member);
+            return member.getId();
     }
+
 
     private void validateDuplicateMember(Member member) {
         memberRepository.findByName(member.getName())

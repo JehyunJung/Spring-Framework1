@@ -1,5 +1,6 @@
 package hello.hellospring;
 
+import hello.hellospring.aop.TimeTraceAop;
 import hello.hellospring.repository.JPAMemberRepository;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.service.MemberService;
@@ -40,5 +41,9 @@ public class SpringConfig {
         return new JDBCMemberRepositry(dataSource);
         return new JDBCTemplateMemberRepositry(dataSource);*//*
         return new JPAMemberRepository(entityManager);
+    }*/
+    /*@Bean
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
     }*/
 }
